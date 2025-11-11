@@ -17,6 +17,8 @@ class CPU {
               std::bind(&CPU::ReadCallBack, this, std::placeholders::_1),
               std::bind(&CPU::WriteCallBack, this, std::placeholders::_1)),
           clk_(0) {}
+    // Add virtual destructor
+    virtual ~CPU() = default;
     virtual void ClockTick() = 0;
     void ReadCallBack(uint64_t addr) { return; }
     void WriteCallBack(uint64_t addr) { return; }

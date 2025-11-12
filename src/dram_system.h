@@ -66,6 +66,7 @@ class JedecDRAMSystem : public BaseDRAMSystem {
     ~JedecDRAMSystem();
     bool WillAcceptTransaction(uint64_t hex_addr, bool is_write) const override;
     bool AddTransaction(uint64_t hex_addr, bool is_write) override;
+    bool AddTransaction(uint64_t hex_addr, bool is_write, uint64_t id);
     void ClockTick() override;
 };
 
